@@ -26,14 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.classList.remove('active');
     });
 
-    // Smooth Scroll for Sidebar
-    document.querySelectorAll('.nav-link').forEach(anchor => {
+    // Smooth Scroll for Sidebar links that use # (Home and Heritage)
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
