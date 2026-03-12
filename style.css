@@ -57,14 +57,14 @@ nav a:hover { color: #fff; }
     justify-content: center; 
 }
 
-/* HD Backgrounds using your uploaded files */
+/* Hero Backgrounds */
 .hero-left { 
     background-image: url('https://images.unsplash.com/photo-1626084428136-118833917637?q=80&w=1200&auto=format&fit=crop'); 
-} /* Lalibela placeholder */
+}
 
 .hero-right { 
-    background-image: url('lucy.jpg'); 
-} /* Your Lucy upload */
+    background-image: url('IMG_20260312_155553.jpg'); 
+}
 
 .hero-overlay { 
     background: rgba(0,0,0,0.5); 
