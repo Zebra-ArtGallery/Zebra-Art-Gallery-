@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Lightbox Logic
     const lightbox = document.createElement('div');
     lightbox.id = 'lightbox';
     document.body.appendChild(lightbox);
@@ -23,5 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.addEventListener('click', e => {
         if (e.target !== e.currentTarget) return;
         lightbox.classList.remove('active');
+    });
+
+    // Smooth Scroll for Sidebar
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 });
