@@ -1,13 +1,36 @@
 body { font-family: 'Georgia', serif; margin: 0; padding: 0; background-color: #fafafa; }
 
 header { 
-    background-color: #000; color: #fff; padding: 1.5rem 0; 
-    text-align: center; position: fixed; width: 100%; top: 0; z-index: 1001; 
+    /* CSS Zebra Stripe Effect */
+    background: repeating-linear-gradient(
+        -45deg,
+        #000,
+        #000 15px,
+        #fff 15px,
+        #fff 30px
+    );
+    padding: 1.2rem 0; 
+    text-align: center; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1001; 
+    border-bottom: 3px solid #000;
 }
 
-header h1 { margin: 0; font-size: 1.2rem; letter-spacing: 5px; text-transform: uppercase; }
+header h1 { 
+    margin: 0; 
+    font-size: 1.3rem; 
+    letter-spacing: 5px; 
+    text-transform: uppercase; 
+    /* Solid black box to make the text pop against the stripes */
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 4px;
+}
 
-/* Fixed the 85px padding to show the menu items correctly */
 .main-layout { display: flex; padding-top: 85px; } 
 
 .sidebar { 
@@ -34,8 +57,24 @@ header h1 { margin: 0; font-size: 1.2rem; letter-spacing: 5px; text-transform: u
 .item-card img { width: 100%; height: 250px; object-fit: cover; }
 
 footer { background: #000; color: #fff; padding: 2rem; border-top: 1px solid #222; }
-.whatsapp-btn { background: #25D366; color: #fff; padding: 8px 15px; text-decoration: none; display: block; margin: 10px auto; width: fit-content; border-radius: 5px; }
-.qr-img { width: 80px; border: 2px solid #fff; }
+
+.social-btn { 
+    color: #fff; 
+    padding: 8px 15px; 
+    text-decoration: none; 
+    display: block; 
+    margin: 8px auto; 
+    width: fit-content; 
+    border-radius: 5px; 
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.whatsapp { background: #25D366; }
+.tiktok { background: #000; border: 1px solid #555; }
+.tiktok:hover { background: #222; }
+
+.qr-img { width: 100px; border: 2px solid #fff; margin-top: 15px; border-radius: 10px; }
 
 @media (max-width: 768px) {
     .sidebar { width: 100%; position: relative; height: auto; border-right: none; }
